@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 200px;
+    height: 200px;
+}
+
+#outer-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+p{
+    font-size: 45px;
+}
+
+#inner-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn{
+    cursor: pointer;
+    border-radius: 7px;
+    border: 2px solid black;
+    font-size: 17px;
+    width: 53px;
+    height: 30px;
+}
+
+#start{
+    background-color: #FFD500;
+}
+
+#reset{
+    background-color: #59A5D8;
+}
+
+#done{
+    background-color: #5BE308;
+}

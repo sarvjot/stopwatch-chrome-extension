@@ -1,0 +1,66 @@
+
+/*
+keepUpdated = function(){
+    setTimeout(function(){
+        chrome.storage.sync.get("hrVal", function(obj){
+            h.innerHTML = obj.hrVal;
+        })
+        chrome.storage.sync.get("minVal", function(obj){
+            m.innerHTML = obj.minVal;
+        })
+        chrome.storage.sync.get("secVal", function(obj){
+            s.innerHTML = obj.secVal;
+        })
+
+        keepUpdated();
+    }, 1);
+}
+*/
+
+/*
+// background.js to popup.js
+
+chrome.runtime.onConnect.addListener(function(port){
+    port.onMessage.addListener(function(msg){
+        console.log("update");
+        if(msg.type === "update"){
+            h.innerHTML = msg.hour;
+            m.innerHTML = msg.minute;
+            s.innerHTML = msg.second;
+        }
+    });
+});
+*/
+
+// message models I am thinking of:
+// 1. Start
+// 2. Reset
+// 3. Stop
+
+// One message has to be that of update, from background to popup
+// One message each for above three events [start, reset, stop], from popup to background
+
+/*
+with one connection, although its an two way communication but the initiation is always one-way
+
+Event Listener Callback function only takes a event as a parameter
+*/
+
+
+/*
+// background.js to popup.js
+
+function initiateUpdate(){
+    background_port = chrome.runtime.connect({name: "background-port"});
+    background_port.postMessage({
+        "type": "update", 
+        "hour": prependZero(hrVal), 
+        "minute": prependZero(minVal),
+        "second": prependZero(secVal)
+    });
+}
+*/
+
+
+// data should be stored in storage as well
+// look at this for unloading of background scripts https://developer.chrome.com/docs/extensions/mv3/service_workers/#unloading 
